@@ -1,0 +1,10 @@
+<!doctype html><html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="stylesheet" href="styles.css"/><title>Dashboard</title><script defer="defer" src="/js/chunk-vendors.814ccd1e.js"></script><script defer="defer" src="/js/app.f91a65e7.js"></script><link href="/css/app.5e8246a3.css" rel="stylesheet"></head><body><div class="dashboard"><div class="sidebar"><div class="logo-box">Logo</div><div class="navigation-buttons"><button>Home</button> <button>Vista 1</button> <button>Vista 2</button></div></div><div class="content"><div class="rectangle"><button class="country-button">País</button><div class="search-bar"><div class="search-container"><input placeholder="Escribe el país que deseas ver" id="searchInput" oninput="filterCountries()"/></div><button onclick="filterCountries()">Buscar</button></div></div><div id="app"></div><script>function filterCountries() {
+            const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+            const countryCards = document.querySelectorAll(".country-card");
+
+            countryCards.forEach((card) => {
+              const countryName = card.querySelector("h2").textContent.toLowerCase();
+              const displayStyle = countryName.includes(searchTerm) ? "block" : "none";
+              card.style.display = displayStyle;
+            });
+          }</script></div></div></body></html>
